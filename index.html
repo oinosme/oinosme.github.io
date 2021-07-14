@@ -1,1 +1,76 @@
-Hello World
+<!-- I DIDN'T MAKE THIS, copied from https://codepen.io/chriseisenbraun/pen/riawD-->
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Oinos</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+<div id="sidebar" class="box">
+	
+		<form action="/search/" method="get" id="quick-search">
+			<div>
+				<input type="hidden" name="alltags">
+				<input type="text" class="keyword-field" name="keyword">
+				<button class="search-submit-button" type="submit">Search</button>
+		  	</div>
+		  </form>
+	
+
+    <ul class="menu">
+      
+
+   
+        <li class="menu_home"><a title="Home" href="/">Home</a></li>
+        <li class="menu_break"></li>
+        <li title="my books on librarything.com" class="menu_about"><a href="/">About</a></li>
+          <li class="menu_break"></li>
+        
+          
+          <li class="menu_break"></li>
+          
+          <li class="menu_logout"><a href="https://search.brave.com/">Logout</a></li> 
+        
+  
+    </ul>
+  </div>
+<div id="main-wrapper">
+<div class="content-page">
+	<h1>OINOS.ME</h1>
+	<p></p>
+	<blockquote><p>Welcome to an empty site<br>
+	</p></blockquote>
+	
+	<div class="keyboard">
+		<script type="text/javascript">
+			(function() { 
+				var row = function(left, keys, right) { return [left].concat(keys.split(''), [right]); }
+				var keyboard = [
+					row('Esc',   '1234567890-', 'Back'),
+					row('Tab',   'qertyuip<', '>'),
+					row('Caps',  'asdfghjkl;', 'Ret'),
+					row('Shift', 'zxcvbnm,./', 'Shift'),
+					['          SPACE          ']
+				];
+
+				var letters = "1234567890qwertyuiopasdfghjklzxcvbnm";
+				for ( var i=0; i<keyboard.length; i++ ) {
+					var keys = keyboard[i];
+					document.write('<div class="keyboard-row">');
+					for ( var j=0; j<keys.length; j++ ) {
+						document.write('<div class="keyboard-key">' + keys[j].toUpperCase().replace(/ /g, '&nbsp;') + '</div>');
+					}
+					document.write('</div>');
+				}
+			})();
+		</script>
+	</div>
+	
+	<p>Based on <a href="https://codepen.io/chriseisenbraun/pen/riawD">TronTheme</a>.
+	</p>
+
+</div>
+</div>
+
+</body>
+</html>
