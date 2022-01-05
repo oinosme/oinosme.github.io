@@ -25,9 +25,11 @@
         <li class="menu_break"></li>
         <li title="my books on librarything.com" class="menu_about"><a href="/about.html">About</a></li>
           <li class="menu_break"></li>
+
+
           <li class="menu_break"></li>
 
-          <li class="menu_logout"><a href="https://duckduckgo.com">Logout</a></li>
+          <li class="menu_logout"><a href="https://search.brave.com/">Logout</a></li>
 
 
     </ul>
@@ -39,20 +41,30 @@
 	<blockquote><p>Welcome to an empty site<br>
 	</p></blockquote>
 
-	<!-- Add a placeholder for the Twitch embed -->
-<div id="twitch-embed"></div>
+	<div class="keyboard">
+		<script type="text/javascript">
+			(function() {
+				var row = function(left, keys, right) { return [left].concat(keys.split(''), [right]); }
+				var keyboard = [
+					row('Esc',   '1234567890-', 'Back'),
+					row('Tab',   'qertyuip<', '>'),
+					row('Caps',  'asdfghjkl;', 'Ret'),
+					row('Shift', 'zxcvbnm,./', 'Shift'),
+					['          SPACE          ']
+				];
 
-<!-- Load the Twitch embed script -->
-<script src="https://player.twitch.tv/js/embed/v1.js"></script>
-
-<!-- Create a Twitch.Player object. This will render within the placeholder div -->
-<script type="text/javascript">
-  new Twitch.Player("twitch-embed", {
-    channel: "oinos1",
-		allowfullscreen: true,
-		theme: dark
-  });
-</script>
+				var letters = "1234567890qwertyuiopasdfghjklzxcvbnm";
+				for ( var i=0; i<keyboard.length; i++ ) {
+					var keys = keyboard[i];
+					document.write('<div class="keyboard-row">');
+					for ( var j=0; j<keys.length; j++ ) {
+						document.write('<div class="keyboard-key">' + keys[j].toUpperCase().replace(/ /g, '&nbsp;') + '</div>');
+					}
+					document.write('</div>');
+				}
+			})();
+		</script>
+	</div>
 
 	<p>Based on <a href="https://codepen.io/chriseisenbraun/pen/riawD">TronTheme</a>.
 	</p>
